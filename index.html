@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+      font-family: fantasy;
+      font-size: 50px;
+      text-align: center;
+      color: #333;
+    }
+
+    img {
+      border-radius: 100px;
+      text-align: center;
+      width: 80px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #090f11;
+    }
+
+    li {
+      float: ;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #b64949;
+    }
+
+    #digitalClock {
+      font-size: 2em;
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+  </style>
+
+  <title>Hypertext Markup Language</title>
+</head>
+
+<body>
+  <center><img src="IMG_7208.JPG" alt="logo"></center>
+  <h1>Welcome to MY PAGE</h1>
+  <ul>
+    <li> </li>
+    <li><a class="active" href="index.html">Main Page</a></li>
+    <li><a href="About me.html">Biodata</a></li>
+  </ul>
+  <br><br><br>
+
+  <div id="digitalClock"></div>
+
+  <script>
+    function updateDigitalClock() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+
+      const formattedTime = `${formatDigit(hours)}:${formatDigit(minutes)}:${formatDigit(seconds)}`;
+      document.getElementById('digitalClock').innerText = formattedTime;
+    }
+
+    function formatDigit(digit) {
+      return digit < 10 ? '0' + digit : digit;
+    }
+
+    setInterval(updateDigitalClock, 1000); // Update every second
+    updateDigitalClock(); // Initial call to set the initial time
+  </script>
+</body>
+
+</html>
